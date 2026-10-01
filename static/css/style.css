@@ -1,0 +1,152 @@
+:root {
+    --marrom-escuro: #3e2723;
+    --marrom: #6f4e37;
+    --caramelo: #c18b5a;
+    --creme: #fce2b4;
+    --dourado: #d8a15d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--creme);
+    color: var(--marrom-escuro);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    background-color: var(--marrom-escuro);
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar-brand span {
+    color: var(--dourado);
+}
+
+.nav-link {
+    color: #ebebeb !important;
+    font-weight: 500;
+    margin-left: 12px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--dourado) !important;
+}
+
+.hero {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(rgba(45, 25, 16, 0.62), rgba(45, 25, 16, 0.62)),
+        url("static/img/ChatGPT\ Image\ 24_09_2026\,\ 11_25_11.png") center/cover;
+    color: #fff;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+.btn-cafe {
+    background-color: var(--dourado);
+    border: none;
+    color: var(--marrom-escuro);
+    font-weight: 700;
+    padding: 12px 24px;
+    transition: 0.3s ease;
+}
+
+.btn-cafe:hover {
+    background-color: #d18315;
+    color: var(--marrom-escuro);
+    transform: translateY(-2px);
+}
+
+.section-title {
+    color: var(--marrom-escuro);
+    font-weight: 700;
+}
+
+.section-subtitle {
+    color: #765b48;
+}
+
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+    filter: brightness(0.78);
+}
+
+.carousel-caption {
+    background: rgba(62, 39, 35, 0.78);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.product-card {
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(62, 39, 35, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 30px rgba(62, 39, 35, 0.2);
+}
+
+.product-card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-card .card-title {
+    color: var(--marrom);
+    font-weight: 700;
+}
+
+.price {
+    color: var(--marrom);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.about-box {
+    background-color: #f1dfca;
+    border-radius: 20px;
+    padding: 36px;
+}
+
+footer {
+    background-color: var(--marrom-escuro);
+    color: #fff;
+}
+
+footer a {
+    color: var(--dourado);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+}

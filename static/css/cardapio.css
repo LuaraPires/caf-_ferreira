@@ -1,0 +1,152 @@
+/* CORES DO CAFÉ FERREIRA */
+:root {
+    --marrom-escuro: #3e2723;
+    --marrom: #6f4e37;
+    --caramelo: #c18b5a;
+    --creme: #fce2b4;
+    --off-white: #fffaf2;
+    --dourado: #d8a15d;
+}
+
+body {
+    background-color: var(--off-white);
+    color: var(--marrom-escuro);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+
+.navbar {
+    background-color: var(--marrom-escuro);
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-brand span {
+    color: var(--dourado);
+}
+
+.nav-link {
+    color: white !important;
+    margin-left: 15px;
+}
+
+.nav-link:hover {
+    color: var(--dourado) !important;
+}
+
+/* BANNER */
+
+.banner {
+    background-color: var(--creme);
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.banner h1 {
+    color: var(--marrom-escuro);
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.banner p {
+    color: var(--marrom);
+    font-size: 1.2rem;
+}
+
+/* TITULO */
+
+.titulo {
+    color: var(--marrom-escuro);
+    font-weight: bold;
+}
+
+.subtitulo {
+    color: #765b48;
+}
+
+/* CARDS */
+
+.card-produto {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 5px 18px rgba(62, 39, 35, 0.15);
+    height: 100%;
+    transition: 0.3s;
+}
+
+.card-produto:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(62, 39, 35, 0.25);
+}
+
+.card-produto img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.card-title {
+    color: var(--marrom);
+    font-weight: bold;
+}
+
+.descricao {
+    color: #6d4c41;
+    min-height: 50px;
+}
+
+.preco {
+    color: var(--marrom-escuro);
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.btn-cafe {
+    background-color: var(--marrom);
+    color: white;
+    border: none;
+}
+
+.btn-cafe:hover {
+    background-color: var(--marrom-escuro);
+    color: white;
+}
+
+/* CATEGORIAS */
+
+.categoria {
+    background-color: var(--creme);
+    color: var(--marrom-escuro);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.categoria:hover {
+    background-color: var(--dourado);
+    color: var(--marrom-escuro);
+}
+
+/* FOOTER */
+
+footer {
+    background-color: var(--marrom-escuro);
+    color: white;
+}
+
+footer a {
+    color: var(--dourado);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}
