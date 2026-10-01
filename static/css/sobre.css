@@ -1,0 +1,162 @@
+:root {
+    --marrom: #5c3b2e;
+    --marrom-escuro: #3e2723;
+    --bege: #f5ead7;
+    --creme: #fffaf2;
+    --dourado: #c08b5c;
+}
+
+body {
+    background-color: var(--creme);
+    color: #3e2723;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: var(--marrom-escuro);
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-brand span {
+    color: #e4b07a;
+}
+
+.nav-link {
+    color: white !important;
+    margin-left: 15px;
+}
+
+.nav-link:hover {
+    color: #e4b07a !important;
+}
+
+/* CABEÇALHO */
+.titulo {
+    background-color: var(--bege);
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.titulo h1 {
+    font-weight: bold;
+    color: var(--marrom-escuro);
+}
+
+.titulo p {
+    font-size: 1.1rem;
+}
+
+/* CARDS */
+.produto {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+    transition: 0.3s;
+    height: 100%;
+    background-color: white;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
+}
+
+.produto img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.produto .card-body {
+    padding: 20px;
+}
+
+.produto h5 {
+    color: var(--marrom-escuro);
+    font-weight: bold;
+}
+
+.preco {
+    color: var(--marrom);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.btn-cafe {
+    background-color: var(--marrom);
+    color: white;
+    border: none;
+}
+
+.btn-cafe:hover {
+    background-color: var(--marrom-escuro);
+    color: white;
+}
+
+/* CATEGORIAS */
+.categoria {
+    color: var(--marrom-escuro);
+    font-weight: bold;
+    border-bottom: 3px solid var(--dourado);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* CARRINHO */
+.carrinho {
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+    position: sticky;
+    top: 90px;
+}
+
+.item-carrinho {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+}
+
+.quantidade button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.total {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--marrom-escuro);
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--marrom-escuro);
+    color: white;
+    margin-top: 60px;
+}
+
+/* MODAL */
+.modal-header {
+    background-color: var(--marrom);
+    color: white;
+}
+
+.btn-finalizar {
+    background-color: #198754;
+    color: white;
+    border: none;
+}
+
+.btn-finalizar:hover {
+    background-color: #146c43;
+    color: white;
+}

@@ -1,320 +1,743 @@
 <!doctype html>
+
 <html lang="pt-BR">
 
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="Café Ferreira: cafés especiais, bebidas artesanais e produtos selecionados para você.">
-    <meta name="keywords" content="Café Ferreira, café, cafeteria, bebidas, pedidos">
-    <meta name="author" content="Luara Pires">
+    <title>Cardápio - Café Ferreira</title>
 
-    <title>Café Ferreira</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../static/img/Favicon.png">
+    <link rel="stylesheet" href="../static/css/cardapio.css">
 
-    <link rel="icon" type="image/png" href="static/img/Favicon.png">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-        <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
 <body>
 
     <!-- HEADER -->
+
     <header>
-        <link rel="stylesheet" href="static/img/entrada.png">
+
+
+
         <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+
+
+
             <div class="container">
+
+
+
                 <a class="navbar-brand" href="index.html">
-                    ☕ Café <span>Ferreira</span>
+
+                    Café <span>Ferreira</span>
+
                 </a>
+
+
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
                     aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
+
+
+
                     <span class="navbar-toggler-icon"></span>
+
+
+
                 </button>
 
+
+
                 <div class="collapse navbar-collapse" id="menuPrincipal">
+
+
+
                     <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="templates/sobre_nos.html">Home</a>
-                        </li>
+
+
 
                         <li class="nav-item">
-                            <a class="nav-link" href="templates/cardapio.html">Pedidos</a>
+
+                            <a class="nav-link" href="#home">
+
+                                Home
+
+                            </a>
+
                         </li>
 
+
+
                         <li class="nav-item">
-                            <a class="nav-link" href="...">Sobre Nós</a>
+
+                            <a class="nav-link" href="templates/cardapio.html">
+
+                                Pedidos
+
+                            </a>
+
                         </li>
+
+
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="#sobre">
+
+                                Sobre Nós
+
+                            </a>
+
+                        </li>
+
+
+
                     </ul>
+
+
+
                 </div>
+
+
+
             </div>
+
+
+
         </nav>
+
+
+
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
+
+
+
+
+    <!-- CONTEÚDO -->
+
     <main>
 
-        <!-- BANNER PRINCIPAL -->
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <span class="badge text-bg-warning mb-3">Sabor artesanal todos os dias</span>
 
-                    <h1>Seu momento especial só começa com um bom café.</h1>
+
+        <!-- BANNER -->
+
+        <section id="home" class="hero">
+
+
+
+            <div class="container">
+
+
+
+                <div class="hero-content">
+
+
+
+                    <span class="badge text-bg-warning mb-3">
+
+                        Sabor artesanal todos os dias
+
+                    </span>
+
+
+
+                    <h1>
+
+                        Seu momento especial só começa com um bom café.
+
+                    </h1>
+
+
 
                     <p>
-                        Descubra cafés selecionados, bebidas cremosas e acompanhamentos
-                        preparados com carinho para tornar o seu dia cada vez melhor.
+
+                        Descubra cafés selecionados, bebidas cremosas e
+
+                        acompanhamentos preparados com carinho para tornar
+
+                        o seu dia cada vez melhor.
+
                     </p>
 
+
+
                     <a href="#produtos" class="btn btn-cafe">
-                        Conheça um pouco do nosso cardápio
+
+                        Conheça nosso cardápio
+
                     </a>
+
+
+
                 </div>
+
+
+
             </div>
+
+
+
         </section>
 
+
+
+
+
         <!-- CARROSSEL -->
+
         <section class="container py-5">
+
+
+
             <div class="text-center mb-4">
-                <h2 class="section-title">Experiências Café Ferreira</h2>
+
+
+
+                <h2 class="section-title">
+
+                    Experiências Café Ferreira
+
+                </h2>
+
+
+
                 <p class="section-subtitle">
+
                     Aromas, sabores e momentos feitos para você.
+
                 </p>
+
+
+
             </div>
+
+
+
+
 
             <div id="carouselCafe" class="carousel slide carousel-fade shadow rounded overflow-hidden"
                 data-bs-ride="carousel">
 
+
+
                 <div class="carousel-indicators">
+
+
+
                     <button type="button" data-bs-target="#carouselCafe" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselCafe" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselCafe" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
+                        aria-current="true" aria-label="Slide 1">
+
+                    </button>
+
+
+
+                    <button type="button" data-bs-target="#carouselCafe" data-bs-slide-to="1" aria-label="Slide 2">
+
+                    </button>
+
+
+
+                    <button type="button" data-bs-target="#carouselCafe" data-bs-slide-to="2" aria-label="Slide 3">
+
+                    </button>
+
+
+
                 </div>
+
+
+
+
 
                 <div class="carousel-inner">
 
+
+
                     <div class="carousel-item active">
-                        <img src="static/img/café.png" class="d-block w-100"
-                            alt="Xícara de café sobre uma mesa">
+
+
+
+                        <img src="static/img/café.png" class="d-block w-100" alt="Xícara de café">
+
+
+
                         <div class="carousel-caption">
-                            <h5>Café fresco e aromático</h5>
-                            <p>Grãos selecionados para uma experiência especial.</p>
+
+
+
+                            <h5>
+
+                                Café fresco e aromático
+
+                            </h5>
+
+
+
+                            <p>
+
+                                Grãos selecionados para uma experiência especial.
+
+                            </p>
+
+
+
                         </div>
+
+
+
                     </div>
+
+
+
+
 
                     <div class="carousel-item">
-                        <img src="static/img/croissant.png" class="d-block w-100"
-                            alt="Café servido em uma xícara">
+
+
+
+                        <img src="static/img/croissant.png" class="d-block w-100" alt="Croissant">
+
+
+
                         <div class="carousel-caption">
-                            <h5>Perfeito para qualquer momento</h5>
-                            <p>Escolha seu café e aproveite com nossos acompanhamentos.</p>
+
+
+
+                            <h5>
+
+                                Perfeito para qualquer momento
+
+                            </h5>
+
+
+
+                            <p>
+
+                                Escolha seu café e aproveite com nossos acompanhamentos.
+
+                            </p>
+
+
 
                         </div>
+
+
+
                     </div>
+
+
+
+
 
                     <div class="carousel-item">
-                        <img src="static/img/capucino.png" class="d-block w-100"
-                            alt="Mesa com café e acompanhamentos">
+
+
+
+                        <img src="static/img/capucino.png" class="d-block w-100" alt="Cappuccino">
+
+
+
                         <div class="carousel-caption">
-                            <h5>Combinações irresistíveis</h5>
-                            <p>Comece bem o dia com o sabor do Café Ferreira.</p>
+
+
+
+                            <h5>
+
+                                Combinações irresistíveis
+
+                            </h5>
+
+
+
+                            <p>
+
+                                Comece bem o dia com o sabor do Café Ferreira.
+
+                            </p>
+
+
+
                         </div>
+
+
+
                     </div>
+
+
 
                 </div>
+
+
+
+
 
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselCafe" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
+
+
+
+                    <span class="carousel-control-prev-icon">\</span>
+
+
+
+                    <span class="visually-hidden">
+
+                        Anterior
+
+                    </span>
+
+
+
                 </button>
+
+
+
+
 
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselCafe" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Próximo</span>
+
+
+
+                    <span class="carousel-control-next-icon">\</span>
+
+
+
+                    <span class="visually-hidden">
+
+                        Próximo
+
+                    </span>
+
+
+
                 </button>
+
+
+
             </div>
+
+
+
         </section>
+
+
+
+
 
         <!-- PRODUTOS -->
+
         <section id="produtos" class="container py-5">
+
+
+
             <div class="text-center mb-5">
-                <h2 class="section-title">Nossos produtos</h2>
+
+
+
+                <h2 class="section-title">
+
+                    Nossos produtos
+
+                </h2>
+
+
+
                 <p class="section-subtitle">
+
                     Escolha seu favorito e aproveite cada gole.
+
                 </p>
+
+
+
             </div>
 
-            <div class="row g-4">
 
-                <div class="col-md-6 col-lg-3">
+
+
+
+            <!-- CARDS CENTRALIZADOS -->
+
+            <div class="row g-4 justify-content-center">
+
+
+
+
+
+                <!-- CARD 1 -->
+
+                <div class="col-md-6 col-lg-3 d-flex justify-content-center">
+
+
+
                     <div class="card product-card">
+
+
+
                         <img src="static/img/café.png" class="card-img-top" alt="Café espresso">
+
+
+
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Espresso Ferreira</h5>
+
+
+
+                            <h5 class="card-title">
+
+                                Espresso Ferreira
+
+                            </h5>
+
+
+
                             <p class="card-text">
-                                Intenso, encorpado e preparado com grãos selecionados.
+
+                                Intenso, encorpado e preparado com
+
+                                grãos selecionados.
+
                             </p>
+
+
+
                             <div class="mt-auto">
-                                <a href="templates/cardapio.html" class="btn btn-cafe w-100">Pedir agora</a>
+
+
+
+                                <a href="templates/cardapio.html" class="btn btn-cafe w-100">
+
+                                    Pedir agora
+
+                                    </a>
+
+
+
                             </div>
+
+
+
                         </div>
+
+
+
                     </div>
+
+
+
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+
+
+
+
+                <!-- CARD 2 -->
+
+                <div class="col-md-6 col-lg-3 d-flex justify-content-center">
+
+
+
                     <div class="card product-card">
-                        <img src="static/img/capucino.png" class="card-img-top"
-                            alt="Cappuccino cremoso">
+
+
+
+                        <img src="static/img/croissant.png" class="card-img-top" alt="Croissant">
+
+
+
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Cappuccino Cremoso</h5>
+
+
+
+                            <h5 class="card-title">
+
+                                Croissant
+
+                            </h5>
+
+
+
                             <p class="card-text">
-                                Café, leite vaporizado e uma espuma irresistivelmente cremosa.
+
+                                Um delicioso acompanhamento para
+
+                                combinar com o seu café.
+
                             </p>
+
+
+
                             <div class="mt-auto">
-                                <a href="templates/cardapio.html" class="btn btn-cafe w-100">Pedir agora</a>
+
+
+
+                                <a href="templates/cardapio.html" class="btn btn-cafe w-100">
+
+                                    Pedir agora
+
+                                </a>
+
+
+
                             </div>
+
+
+
                         </div>
+
+
+
                     </div>
+
+
+
                 </div>
 
-                <div class="col-md-6 col-lg-3">
-                    <div class="card product-card">
-                        <img src="static/img/gelado.png" class="card-img-top" alt="Café gelado">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Iced Coffee</h5>
-                            <p class="card-text">
-                                Uma opção refrescante para os dias mais quentes.
-                            </p>
-                            <div class="mt-auto">
-                                <a href="templates/cardapio.html" class="btn btn-cafe w-100">Pedir agora</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-md-6 col-lg-3">
-                    <div class="card product-card">
-                        <img src="static/img/croissant.png" class="card-img-top"
-                            alt="Donuts e acompanhamentos">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title"> Croissant </h5>
-                            <p class="card-text">
-                                Um deliciosos acompanhamento para combinar com o seu café.
-                            </p>
-                            <div class="mt-auto">
-                                <a href="templates/cardapio.html" class="btn btn-cafe w-100">Pedir agora</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
+
+
+
         </section>
+
+
+
+
 
         <!-- SOBRE -->
-        <section class="container py-5">
+
+        <section id="sobre" class="container py-5">
+
+
+
             <div class="about-box text-center">
-                <h2 class="section-title mb-3">Feito para os amantes de café</h2>
+
+
+
+                <h2 class="section-title mb-3">
+
+                    Um Pouco da Nossa História
+
+                </h2>
+
+
 
                 <p class="mb-0">
-                    No Café Ferreira, cada bebida é preparada com ingredientes selecionados
-                    e muito cuidado. Nosso objetivo é transformar uma simples pausa em um
-                    momento memorável.
+
+
+
+                    O Café Ferreira surgiu com o propósito de oferecer
+
+                    um espaço agradável e acolhedor para pessoas que
+
+                    apreciam um bom café e momentos especiais.
+
+
+
+                    Inspirada na tradição das cafeterias, a marca busca
+
+                    unir qualidade, simplicidade e bom atendimento.
+
+
+
+                    Desde sua criação, o Café Ferreira valoriza a
+
+                    preparação cuidadosa de cafés, doces e salgados,
+
+                    proporcionando aos clientes uma experiência agradável
+
+                    em um ambiente confortável.
+
+
+
+                    A cafeteria tem como objetivo conquistar seus clientes
+
+                    pela qualidade dos produtos e pelo atendimento atencioso.
+
+
+
+                    Com uma proposta simples e acolhedora, o Café Ferreira
+
+                    busca se tornar um lugar de encontro, onde cada cliente
+
+                    possa desfrutar de bons sabores e momentos de tranquilidade.
+
+
+
                 </p>
+
+
+
             </div>
+
+
+
         </section>
 
-        <!-- PEDIDOS -->
-        <section id="pedidos" class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card border-0 shadow-sm p-4">
-                        <div class="text-center mb-4">
-                            <h2 class="section-title">Faça seu pedido</h2>
-                            <p class="section-subtitle">
-                                Preencha os dados abaixo e entraremos em contato.
-                            </p>
-                        </div>
 
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="nome" class="form-label">Nome</label>
-                                    <input type="text" class="form-control" id="nome" placeholder="Digite seu nome"
-                                        required>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="telefone" class="form-label">Telefone</label>
-                                    <input type="tel" class="form-control" id="telefone" placeholder="(11) 99999-9999"
-                                        required>
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="produto" class="form-label">Produto desejado</label>
-                                    <select class="form-select" id="produto" required>
-                                        <option value="" selected disabled>Selecione um produto</option>
-                                        <option>Espresso Ferreira</option>
-                                        <option>Cappuccino Cremoso</option>
-                                        <option>Iced Coffee</option>
-                                        <option>Doce Acompanhamento</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="observacao" class="form-label">Observações</label>
-                                    <textarea class="form-control" id="observacao" rows="4"
-                                        placeholder="Adicione alguma observação ao pedido"></textarea>
-                                </div>
-
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-cafe w-100">
-                                        Enviar pedido
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="py-4">
-        <div class="container text-center">
-            <h5>Café Ferreira</h5>
 
-            <p class="mb-2">
+
+
+
+    <!-- FOOTER -->
+
+    <footer id="contato" class="py-4">
+
+        <div class="container text-center">
+
+            <h5>
+                ☕ Café Ferreira
+            </h5>
+
+            <p class="mb-1">
+                Seu momento especial começa com um bom café.
+            </p>
+
+            <p class="mb-1">
                 📞 (11) 93275-8484
             </p>
 
-            <p class="mb-2">
-                <a href="mailto:cafeferreira@email.com">
-                    ✉ cafeferreira@email.com
-                </a>
+            <p>
+                ✉ cafeferreira@email.com
             </p>
 
-            <p class="mb-0">
+            <hr>
+
+            <small>
                 © 2026 Café Ferreira - Todos os direitos reservados
-            </p>
+            </small>
+
         </div>
+
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+
+
+
+
+    <!-- Bootstrap JavaScript -->
+
+
+    <script
+        src="[https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js](https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js)">
+
+        </script>
+
+
+
 
 </body>
+
+
+
 
 
 </html>
