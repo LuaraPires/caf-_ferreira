@@ -57,7 +57,7 @@ body {
 
     color: #fff;
 
-    
+
 }
 
 .hero-content {
@@ -208,21 +208,203 @@ footer a:hover {
     color: #fff;
 }
 
+.navbar {
+    background-color: var(--marrom-escuro);
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-brand span {
+    color: var(--dourado);
+}
+
+.navbar .nav-link {
+    color: white !important;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.navbar .nav-link:hover {
+    color: var(--dourado) !important;
+}
+
+.hero {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(rgba(62, 39, 35, 0.65),
+            rgba(62, 39, 35, 0.65)),
+        url("static/img/café.png") center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 650px;
+    color: white;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.btn-cafe {
+    background-color: var(--marrom);
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-cafe:hover {
+    background-color: var(--marrom-escuro);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.section-title {
+    color: var(--marrom-escuro);
+    font-weight: bold;
+}
+
+.section-subtitle {
+    color: var(--marrom);
+}
+
+#carouselCafe {
+    max-width: 850px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+#carouselCafe .carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+#carouselCafe .carousel-caption {
+    background: rgba(62, 39, 35, 0.78);
+    border-radius: 10px;
+    padding: 12px 20px;
+    bottom: 25px;
+    max-width: 600px;
+    margin: auto;
+}
+
+#carouselCafe .carousel-caption h5 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+#carouselCafe .carousel-caption p {
+    font-size: 0.95rem;
+    margin: 0;
+}
 
 
-/* RESPONSIVIDADE */
+.product-card {
+    width: 100%;
+    max-width: 280px;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
 
-@media (max-width: 767px) {
+.product-card:hover {
+    transform: translateY(-5px);
+}
 
-    .product-card {
-        max-width: 340px;
-    }
+.product-card img {
+    height: 210px;
+    object-fit: cover;
+}
+
+.product-card .card-body {
+    background-color: white;
+}
+
+.product-card .card-title {
+    color: var(--marrom-escuro);
+    font-weight: bold;
+}
+
+.product-card .card-text {
+    color: #5f4a42;
+}
+
+
+.about-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-box p {
+    line-height: 1.8;
+    color: #5f4a42;
+}
+
+
+
+/* =========================
+           RESPONSIVIDADE
+        ========================= */
+
+@media (max-width: 768px) {
 
     .hero {
-        min-height: 420px;
+        min-height: 450px;
     }
 
-    .hero-content {
-        text-align: center;
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    #carouselCafe {
+        max-width: 95%;
+    }
+
+    #carouselCafe .carousel-item img {
+        height: 280px;
+    }
+
+    #carouselCafe .carousel-caption {
+        padding: 8px 12px;
+        bottom: 15px;
+    }
+
+    #carouselCafe .carousel-caption h5 {
+        font-size: 1.1rem;
+    }
+
+    #carouselCafe .carousel-caption p {
+        font-size: 0.8rem;
+    }
+
+    .about-box {
+        padding: 25px;
     }
 }

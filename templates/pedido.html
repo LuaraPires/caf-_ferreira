@@ -4,913 +4,471 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Pedidos - Café Ferreira</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="icon" type="image/png" href="../static/img/Favicon.png">
-
     <link rel="stylesheet" href="../static/css/pedido.css">
 </head>
 
-<body> 
+<body>
 
     <!-- NAVBAR -->
     <header>
-
         <nav class="navbar navbar-expand-lg sticky-top">
-            <link rel="icon" type="image/png" href="../static/img/entrada.png">
-
             <div class="container">
-
-                <a class="navbar-brand" href="../index.html">
-                    ☕ Café <span>Ferreira</span>
-                </a>
-
+                <a class="navbar-brand" href="../index.html">Café <span>Ferreira</span></a>
                 <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-
                     <span class="navbar-toggler-icon"></span>
-
                 </button>
-
                 <div class="collapse navbar-collapse" id="menu">
-
                     <ul class="navbar-nav ms-auto">
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html">
-                                Início
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="../templates/cardapio.html">
-                                Cardapio
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="../templates/pedido.html">
-                                🛒 Pedido
-                            </a>
-                        </li>
-
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../templates/cardapio.html">Cardápio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../templates/pedido.html">Pedido</a></li>
                     </ul>
-
                 </div>
-
             </div>
-
         </nav>
     </header>
 
-
-
     <section class="titulo">
-
         <div class="container">
-
-            <h1>☕ Faça seu pedido</h1>
-
-            <p class="mb-0">
-                Escolha seus produtos favoritos e monte seu pedido.
-            </p>
-
+            <h1>Faça seu pedido</h1>
+            <p class="mb-0">Escolha seus produtos favoritos e monte seu pedido.</p>
         </div>
-
     </section>
 
-
-    <!-- CARDÁPIO -->
+    <!-- CARDÁPIO / PEDIDO -->
     <main class="container py-5">
-
         <div class="row">
-
             <!-- PRODUTOS -->
             <div class="col-lg-8">
 
                 <!-- CAFÉS -->
                 <section class="mb-5">
-
-                    <h2 class="categoria mb-4">
-                        ☕ Cafés
-                    </h2>
-
+                    <h2 class="categoria mb-4">☕ Cafés</h2>
                     <div class="row g-4">
-
-                        <!-- CAFÉ EXPRESSO -->
                         <div class="col-md-6">
-
                             <div class="card produto">
-
                                 <img src="../static/img/café.png" alt="Café expresso">
-
                                 <div class="card-body">
-
                                     <h5>Café Expresso</h5>
-
-                                    <p>
-                                        Café expresso tradicional, intenso e aromático.
-                                    </p>
-
+                                    <p>Café expresso tradicional, intenso e aromático.</p>
                                     <div class="d-flex justify-content-between align-items-center">
-
-                                        <span class="preco">
-                                            R$ 6,00
-                                        </span>
-
-                                        <button class="btn btn-cafe" onclick="adicionar('Café Expresso', 6.00)">
-                                            Adicionar
-                                        </button>
-
+                                        <span class="preco">R$ 6,00</span>
+                                        <button class="btn btn-cafe"
+                                            onclick="adicionar('Café Expresso', 6.00)">Adicionar</button>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
 
-
-                        <!-- CAPPUCCINO -->
                         <div class="col-md-6">
-
                             <div class="card produto">
-
                                 <img src="../static/img/capucino.png" alt="Cappuccino">
-
                                 <div class="card-body">
-
-                                    <h5>Cappuccino</h5>
-
-                                    <p>
-                                        Café cremoso com leite vaporizado e espuma.
-                                    </p>
-
+                                    <h5>Cappuccino Cremoso</h5>
+                                    <p>Café cremoso com leite vaporizado e espuma.</p>
                                     <div class="d-flex justify-content-between align-items-center">
-
-                                        <span class="preco">
-                                            R$ 9,00
-                                        </span>
-
-                                        <button class="btn btn-cafe" onclick="adicionar('Cappuccino', 9.00)">
-                                            Adicionar
-                                        </button>
-
+                                        <span class="preco">R$ 9,00</span>
+                                        <button class="btn btn-cafe"
+                                            onclick="adicionar('Cappuccino', 9.00)">Adicionar</button>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
 
-
-                        <!-- CAFÉ GELADO -->
                         <div class="col-md-6">
-
                             <div class="card produto">
-
                                 <img src="../static/img/gelado.png" alt="Café gelado">
-
                                 <div class="card-body">
-
-                                    <h5>Café Gelado</h5>
-
-                                    <p>
-                                        Café gelado refrescante e levemente adocicado.
-                                    </p>
-
+                                    <h5>Café Gelado Cremoso</h5>
+                                    <p>Café gelado refrescante e levemente adocicado.</p>
                                     <div class="d-flex justify-content-between align-items-center">
-
-                                        <span class="preco">
-                                            R$ 10,00
-                                        </span>
-
-                                        <button class="btn btn-cafe" onclick="adicionar('Café Gelado', 10.00)">
-                                            Adicionar
-                                        </button>
-
+                                        <span class="preco">R$ 11,00</span>
+                                        <button class="btn btn-cafe"
+                                            onclick="adicionar('Café Gelado', 11.00)">Adicionar</button>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
-
-
-                        <!-- LATTE -->
-                        <div class="col-md-6">
-
-                            <div class="card produto">
-
-                                <img src="https://images.unsplash.com/photo-1561882468-9110e03e0f78?auto=format&fit=crop&w=800&q=80"
-                                    alt="Café latte">
-
-                                <div class="card-body">
-
-                                    <h5>Latte</h5>
-
-                                    <p>
-                                        Café suave com leite cremoso e espuma.
-                                    </p>
-
-                                    <div class="d-flex justify-content-between align-items-center">
-
-                                        <span class="preco">
-                                            R$ 11,00
-                                        </span>
-
-                                        <button class="btn btn-cafe" onclick="adicionar('Latte', 11.00)">
-                                            Adicionar
-                                        </button>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
                     </div>
-
                 </section>
-
 
                 <!-- DOCES -->
                 <section class="mb-5">
-
-                    <h2 class="categoria mb-4">
-                        🍰 Doces
-                    </h2>
-
+                    <h2 class="categoria mb-4">🍰 Doces</h2>
                     <div class="row g-4">
-
-                        <!-- BROWNIE -->
                         <div class="col-md-6">
-
                             <div class="card produto">
-
-                                <img src="../static/img/bolo.png" alt="Brownie">
-
+                                <img src="../static/img/bolo.png" alt="Bolo de Chocolate">
                                 <div class="card-body">
-
                                     <h5>Bolo de Chocolate</h5>
-
-                                    <p>
-                                        Bolo de chocolate com textura macia.
-                                    </p>
-
+                                    <p>Bolo de chocolate com textura macia.</p>
                                     <div class="d-flex justify-content-between align-items-center">
-
-                                        <span class="preco">
-                                            R$ 8,00
-                                        </span>
-
-                                        <button class="btn btn-cafe" onclick="adicionar('Brownie', 8.00)">
-                                            Adicionar
-                                        </button>
-
+                                        <span class="preco">R$ 9,00</span>
+                                        <button class="btn btn-cafe"
+                                            onclick="adicionar('Bolo de Chocolate', 9.00)">Adicionar</button>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
 
-
-                        <!-- CHEESECAKE -->
                         <div class="col-md-6">
-
                             <div class="card produto">
-
-                                <img src="../static/img/cheescake.png" alt="Cheesecake">
-
+                                <img src="../static/img/brownie.png" alt="Brownie">
                                 <div class="card-body">
-
-                                    <h5>Cheesecake</h5>
-
-                                    <p>
-                                        Cheesecake cremoso com cobertura de frutas.
-                                    </p>
-
+                                    <h5>Brownie de Chocolate</h5>
+                                    <p>Brownie macio e intenso de chocolate.</p>
                                     <div class="d-flex justify-content-between align-items-center">
-
-                                        <span class="preco">
-                                            R$ 12,00
-                                        </span>
-
-                                        <button class="btn btn-cafe" onclick="adicionar('Cheesecake', 12.00)">
-                                            Adicionar
-                                        </button>
-
+                                        <span class="preco">R$ 10,00</span>
+                                        <button class="btn btn-cafe"
+                                            onclick="adicionar('Brownie', 10.00)">Adicionar</button>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
 
+                        <div class="col-md-6">
+                            <div class="card produto">
+                                <img src="../static/img/cheescake.png" alt="Cheesecake">
+                                <div class="card-body">
+                                    <h5>Cheesecake</h5>
+                                    <p>Cheesecake cremoso com cobertura de frutas.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="preco">R$ 15,00</span>
+                                        <button class="btn btn-cafe"
+                                            onclick="adicionar('Cheesecake', 15.00)">Adicionar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
                 </section>
-
 
                 <!-- SALGADOS -->
-                <section>
-
-                    <h2 class="categoria mb-4">
-                        🥐 Salgados
-                    </h2>
-
+                <section class="mb-5">
+                    <h2 class="categoria mb-4">🥐 Salgados</h2>
                     <div class="row g-4">
-
-                        <!-- CROISSANT -->
                         <div class="col-md-6">
-
                             <div class="card produto">
-
                                 <img src="../static/img/croissant.png" alt="Croissant">
-
                                 <div class="card-body">
-
                                     <h5>Croissant</h5>
-
-                                    <p>
-                                        Croissant crocante e recheado com queijo.
-                                    </p>
-
+                                    <p>Croissant crocante por fora e macio por dentro.</p>
                                     <div class="d-flex justify-content-between align-items-center">
-
-                                        <span class="preco">
-                                            R$ 9,00
-                                        </span>
-
-                                        <button class="btn btn-cafe" onclick="adicionar('Croissant', 9.00)">
-                                            Adicionar
-                                        </button>
-
+                                        <span class="preco">R$ 8,50</span>
+                                        <button class="btn btn-cafe"
+                                            onclick="adicionar('Croissant', 8.50)">Adicionar</button>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
 
-
-                        <!-- PÃO DE QUEIJO -->
                         <div class="col-md-6">
-
                             <div class="card produto">
-
-                                <img src="../static/img/empada de framgo.png" alt="Pão de queijo">
-
+                                <img src="../static/img/empada de framgo.png" alt="Empada de Frango">
                                 <div class="card-body">
-
                                     <h5>Empada de Frango</h5>
-
-                                    <p>
-                                        Empada de Frango quentinho, saboroso e cremoso.
-                                    </p>
-
+                                    <p>Empada de Frango quentinha, saborosa e cremosa.</p>
                                     <div class="d-flex justify-content-between align-items-center">
-
-                                        <span class="preco">
-                                            R$ 6,00
-                                        </span>
-
-                                        <button class="btn btn-cafe" onclick="adicionar('Pão de Queijo', 6.00)">
-                                            Adicionar
-                                        </button>
-
+                                        <span class="preco">R$ 9,00</span>
+                                        <button class="btn btn-cafe"
+                                            onclick="adicionar('Empada de Frango', 9.00)">Adicionar</button>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
 
+                        <div class="col-md-6">
+                            <div class="card produto">
+                                <img src="../static/img/Misto quente.png" alt="Misto Quente">
+                                <div class="card-body">
+                                    <h5>Misto Quente</h5>
+                                    <p>Pão de forma, presunto e queijo derretido.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="preco">R$ 9,00</span>
+                                        <button class="btn btn-cafe"
+                                            onclick="adicionar('Misto Quente', 9.00)">Adicionar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
                 </section>
 
-            </div>
+                <!-- SAUDÁVEIS -->
+                <section class="mb-5">
+                    <h2 class="categoria mb-4">Saudáveis</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card produto">
+                                <img src="../static/img/salade  frruta.jpg" alt="Salada de fruta">
+                                <div class="card-body">
+                                    <h5>Salada de Fruta</h5>
+                                    <p>frutas frescas e deliciosa.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="preco">R$ 11,50</span>
+                                        <button class="btn btn-cafe"
+                                            onclick="adicionar('salada de fruta', 11.50)">Adicionar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="col-md-6">
+                            <div class="card produto">
+                                <img src="../static/img/iorgute saudável.jpg" alt="Iorgute com Granola">
+                                <div class="card-body">
+                                    <h5>Iorgute com Granola</h5>
+                                    <p>Iorgute natural com pedaço de morango e uma granola crocante</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="preco">R$ 10,00</span>
+                                        <button class="btn btn-cafe"
+                                            onclick="adicionar('iorgute com Granola', 10.00)">Adicionar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card produto">
+                                <img src="../static/img/acai.jpg" alt="Açaí">
+                                <div class="card-body">
+                                    <h5>Açaí</h5>
+                                    <p>PAçaí cremoso servido com frutas.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="preco">R$ 15,00</span>
+                                        <button class="btn btn-cafe"
+                                            onclick="adicionar('Açaí', 15.00)">Adicionar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
 
             <!-- CARRINHO -->
             <div class="col-lg-4 mt-5 mt-lg-0" id="pedido">
-
                 <div class="carrinho">
-
-                    <h3 class="mb-4">
-                        🛒 Seu pedido
-                    </h3>
-
+                    <h3 class="mb-4">🛒 Seu pedido</h3>
                     <div id="listaPedido">
-
-                        <p class="text-muted text-center">
-                            Seu pedido está vazio.
-                        </p>
-
+                        <p class="text-muted text-center">Seu pedido está vazio.</p>
                     </div>
-
                     <hr>
-
                     <div class="d-flex justify-content-between">
-
-                        <span class="total">
-                            Total:
-                        </span>
-
-                        <span class="total" id="total">
-                            R$ 0,00
-                        </span>
-
+                        <span class="total">Total:</span>
+                        <span class="total" id="total">R$ 0,00</span>
                     </div>
-
                     <button class="btn btn-finalizar w-100 mt-4" data-bs-toggle="modal" data-bs-target="#modalPedido"
                         onclick="abrirFinalizacao()">
-
                         Finalizar pedido
-
                     </button>
-
                 </div>
-
             </div>
-
         </div>
-
     </main>
-
 
     <!-- MODAL FINALIZAR PEDIDO -->
     <div class="modal fade" id="modalPedido" tabindex="-1">
-
         <div class="modal-dialog modal-dialog-centered">
-
             <div class="modal-content">
-
                 <div class="modal-header">
-
-                    <h5 class="modal-title">
-                        Finalizar pedido
-                    </h5>
-
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
-                    </button>
-
+                    <h5 class="modal-title">Finalizar pedido</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
-
                 <div class="modal-body">
-
                     <div id="formularioPedido">
-
                         <div class="mb-3">
-
-                            <label class="form-label">
-                                Nome
-                            </label>
-
+                            <label class="form-label">Nome</label>
                             <input type="text" id="nome" class="form-control" placeholder="Digite seu nome" required>
-
                         </div>
-
-
                         <div class="mb-3">
-
-                            <label class="form-label">
-                                Forma de pagamento
-                            </label>
-
+                            <label class="form-label">Forma de pagamento</label>
                             <select id="pagamento" class="form-select">
-
-                                <option value="">
-                                    Selecione
-                                </option>
-
-                                <option value="Pix">
-                                    Pix
-                                </option>
-
-                                <option value="Cartão de crédito">
-                                    Cartão de crédito
-                                </option>
-
-                                <option value="Cartão de débito">
-                                    Cartão de débito
-                                </option>
-
-                                <option value="Dinheiro">
-                                    Dinheiro
-                                </option>
-
+                                <option value="">Selecione</option>
+                                <option value="Pix">Pix</option>
+                                <option value="Cartão de crédito">Cartão de crédito</option>
+                                <option value="Cartão de débito">Cartão de débito</option>
+                                <option value="Dinheiro">Dinheiro</option>
                             </select>
-
                         </div>
-
-
                         <div class="mb-3">
-
-                            <label class="form-label">
-                                Observações
-                            </label>
-
+                            <label class="form-label">Observações</label>
                             <textarea id="observacao" class="form-control" rows="3"
-                                placeholder="Ex.: pouco açúcar, sem gelo...">
-                            </textarea>
-
+                                placeholder="Ex.: pouco açúcar, sem gelo..."></textarea>
                         </div>
-
-
                         <div class="alert alert-light border">
-
                             <strong>Total do pedido:</strong>
-
-                            <span id="totalModal">
-                                R$ 0,00
-                            </span>
-
+                            <span id="totalModal">R$ 0,00</span>
                         </div>
-
                     </div>
-
 
                     <!-- CONFIRMAÇÃO -->
                     <div id="confirmacao" class="text-center d-none">
-
-                        <div class="display-1">
-                            ✅
-                        </div>
-
-                        <h3 class="mt-3">
-                            Pedido realizado!
-                        </h3>
-
-                        <p>
-                            Obrigado por escolher o Café Ferreira.
-                        </p>
-
+                        <div class="display-1">✅</div>
+                        <h3 class="mt-3">Pedido realizado!</h3>
+                        <p>Obrigado por escolher o Café Ferreira.</p>
                         <p id="numeroPedido"></p>
-
                     </div>
-
                 </div>
-
                 <div class="modal-footer" id="botoesModal">
-
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-
-                        Cancelar
-
-                    </button>
-
-                    <button type="button" class="btn btn-finalizar" onclick="finalizarPedido()">
-
-                        Confirmar pedido
-
-                    </button>
-
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-finalizar" onclick="finalizarPedido()">Confirmar
+                        pedido</button>
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 
     <!-- FOOTER -->
     <footer id="contato" class="py-4">
-
         <div class="container text-center">
-
-            <h5>
-                ☕ Café Ferreira
-            </h5>
-
-            <p class="mb-1">
-                Seu momento especial começa com um bom café.
-            </p>
-
-            <p class="mb-1">
-                📞 (11) 93275-8484
-            </p>
-
-            <p>
-                ✉ cafeferreira@email.com
-            </p>
-
+            <h5>☕ Café Ferreira</h5>
+            <p class="mb-1">Seu momento especial começa com um bom café.</p>
+            <p class="mb-1">📞 (11) 93275-8484</p>
+            <p>✉ cafeferreira@email.com</p>
             <hr>
-
-            <small>
-                © 2026 Café Ferreira - Todos os direitos reservados
-            </small>
-
+            <small>© 2026 Café Ferreira - Todos os direitos reservados</small>
         </div>
-
     </footer>
 
-
-    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-
-    <!-- JAVASCRIPT DO PEDIDO -->
+    <!-- JAVASCRIPT INTEGRADO -->
     <script>
+        // Carrega o pedido do localStorage ao iniciar a página
+        let pedido = JSON.parse(localStorage.getItem('carrinhoCafe')) || [];
 
-        let pedido = [];
+        function salvarESincronizar() {
+            localStorage.setItem('carrinhoCafe', JSON.stringify(pedido));
+            atualizarPedido();
+        }
 
         function adicionar(nome, preco) {
-
             let item = pedido.find(produto => produto.nome === nome);
-
             if (item) {
-
                 item.quantidade++;
-
             } else {
-
                 pedido.push({
                     nome: nome,
                     preco: preco,
                     quantidade: 1
                 });
-
             }
-
-            atualizarPedido();
-
+            salvarESincronizar();
         }
-
 
         function aumentar(index) {
-
             pedido[index].quantidade++;
-
-            atualizarPedido();
-
+            salvarESincronizar();
         }
-
 
         function diminuir(index) {
-
             pedido[index].quantidade--;
-
             if (pedido[index].quantidade <= 0) {
-
                 pedido.splice(index, 1);
-
             }
-
-            atualizarPedido();
-
+            salvarESincronizar();
         }
-
 
         function remover(index) {
-
             pedido.splice(index, 1);
-
-            atualizarPedido();
-
+            salvarESincronizar();
         }
-
 
         function calcularTotal() {
-
-            return pedido.reduce(
-                (total, item) =>
-                    total + (item.preco * item.quantidade),
-                0
-            );
-
+            return pedido.reduce((total, item) => total + (item.preco * item.quantidade), 0);
         }
 
-
         function atualizarPedido() {
-
             const lista = document.getElementById("listaPedido");
-
             lista.innerHTML = "";
 
             if (pedido.length === 0) {
-
-                lista.innerHTML = `
-                    <p class="text-muted text-center">
-                        Seu pedido está vazio.
-                    </p>
-                `;
-
+                lista.innerHTML = `<p class="text-muted text-center">Seu pedido está vazio.</p>`;
             } else {
-
                 pedido.forEach((item, index) => {
-
                     lista.innerHTML += `
-
                         <div class="item-carrinho">
-
                             <div class="d-flex justify-content-between">
-
-                                <strong>
-                                    ${item.nome}
-                                </strong>
-
-                                <button
-                                    class="btn btn-sm btn-outline-danger"
-                                    onclick="remover(${index})">
-
-                                    ×
-
-                                </button>
-
+                                <strong>${item.nome}</strong>
+                                <button class="btn btn-sm btn-outline-danger" onclick="remover(${index})">×</button>
                             </div>
-
                             <div class="d-flex justify-content-between align-items-center mt-2">
-
                                 <div class="quantidade">
-
-                                    <button
-                                        class="btn btn-outline-secondary btn-sm"
-                                        onclick="diminuir(${index})">
-
-                                        −
-
-                                    </button>
-
-                                    <span class="mx-2">
-                                        ${item.quantidade}
-                                    </span>
-
-                                    <button
-                                        class="btn btn-outline-secondary btn-sm"
-                                        onclick="aumentar(${index})">
-
-                                        +
-
-                                    </button>
-
+                                    <button class="btn btn-outline-secondary btn-sm" onclick="diminuir(${index})">−</button>
+                                    <span class="mx-2">${item.quantidade}</span>
+                                    <button class="btn btn-outline-secondary btn-sm" onclick="aumentar(${index})">+</button>
                                 </div>
-
-                                <strong>
-                                    R$ ${(item.preco * item.quantidade)
-                            .toFixed(2)
-                            .replace(".", ",")}
-                                </strong>
-
+                                <strong>R$ ${(item.preco * item.quantidade).toFixed(2).replace(".", ",")}</strong>
                             </div>
-
                         </div>
                     `;
-
                 });
-
             }
 
-
             const total = calcularTotal();
-
-            document.getElementById("total").innerText =
-                "R$ " + total.toFixed(2).replace(".", ",");
-
+            document.getElementById("total").innerText = "R$ " + total.toFixed(2).replace(".", ",");
         }
-
 
         function abrirFinalizacao() {
-
             const total = calcularTotal();
-
-            document.getElementById("totalModal").innerText =
-                "R$ " + total.toFixed(2).replace(".", ",");
-
+            document.getElementById("totalModal").innerText = "R$ " + total.toFixed(2).replace(".", ",");
         }
-
 
         function finalizarPedido() {
-
             if (pedido.length === 0) {
-
                 alert("Adicione pelo menos um produto ao pedido.");
-
                 return;
-
             }
 
-
-            const nome =
-                document.getElementById("nome").value.trim();
-
-            const pagamento =
-                document.getElementById("pagamento").value;
-
+            const nome = document.getElementById("nome").value.trim();
+            const pagamento = document.getElementById("pagamento").value;
 
             if (nome === "") {
-
                 alert("Digite seu nome.");
-
                 return;
-
             }
-
 
             if (pagamento === "") {
-
                 alert("Selecione uma forma de pagamento.");
-
                 return;
-
             }
 
+            const numero = Math.floor(1000 + Math.random() * 9000);
 
-            const numero =
-                Math.floor(1000 + Math.random() * 9000);
-
-
-            document.getElementById("formularioPedido")
-                .classList.add("d-none");
-
-
-            document.getElementById("confirmacao")
-                .classList.remove("d-none");
-
-
-            document.getElementById("numeroPedido").innerHTML =
-
-                `Pedido nº <strong>#${numero}</strong>`;
-
+            document.getElementById("formularioPedido").classList.add("d-none");
+            document.getElementById("confirmacao").classList.remove("d-none");
+            document.getElementById("numeroPedido").innerHTML = `Pedido nº <strong>#${numero}</strong>`;
 
             document.getElementById("botoesModal").innerHTML = `
-
-                <button
-                    type="button"
-                    class="btn btn-cafe"
-                    data-bs-dismiss="modal"
-                    onclick="limparPedido()">
-
-                    Fechar
-
-                </button>
-
+                <button type="button" class="btn btn-cafe" data-bs-dismiss="modal" onclick="limparPedido()">Fechar</button>
             `;
-
         }
 
-
         function limparPedido() {
-
             pedido = [];
-
+            localStorage.removeItem('carrinhoCafe');
             atualizarPedido();
 
             document.getElementById("nome").value = "";
-
             document.getElementById("pagamento").value = "";
-
             document.getElementById("observacao").value = "";
 
-
-            document.getElementById("formularioPedido")
-                .classList.remove("d-none");
-
-
-            document.getElementById("confirmacao")
-                .classList.add("d-none");
-
+            document.getElementById("formularioPedido").classList.remove("d-none");
+            document.getElementById("confirmacao").classList.add("d-none");
 
             document.getElementById("botoesModal").innerHTML = `
-
-                <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-bs-dismiss="modal">
-
-                    Cancelar
-
-                </button>
-
-                <button
-                    type="button"
-                    class="btn btn-finalizar"
-                    onclick="finalizarPedido()">
-
-                    Confirmar pedido
-
-                </button>
-
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-finalizar" onclick="finalizarPedido()">Confirmar pedido</button>
             `;
-
         }
 
+        // Executa ao carregar a página
+        atualizarPedido();
     </script>
-
 </body>
 
 </html>
-```
