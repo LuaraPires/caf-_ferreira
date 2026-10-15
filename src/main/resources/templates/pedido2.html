@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pedidos - Café Ferreira</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png"
+          th:href="@{/img/Favicon.png}">
+
+    <!-- CSS da página -->
+    <link rel="stylesheet" th:href="@{/css/pedido.css}">
+</head>
+
+
+<body>
+
+    <!-- ==============================
+         NAVBAR
+    =============================== -->
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <div class="container">
+
+                <a class="navbar-brand" th:href="@{/}">
+                    ☕ Café <span>Ferreira</span>
+                </a>
+
+                <button class="navbar-toggler bg-light"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menu"
+                        aria-controls="menu"
+                        aria-expanded="false"
+                        aria-label="Abrir menu">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/}">
+                                Início
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/cardapio}">
+                                Cardápio
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/pedido}">
+                                Pedido
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+
+
+    <!-- ==============================
+         TÍTULO
+    =============================== -->
+    <section class="titulo">
+
+        <div class="container">
+
+            <h1>Faça seu pedido</h1>
+
+            <p class="mb-0">
+                Escolha seus produtos favoritos e monte seu pedido.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         CONTEÚDO PRINCIPAL
+    =============================== -->
+    <main class="container py-5">
+
+        <div class="row">
+
+            <!-- ==============================
+                 PRODUTOS
+            =============================== -->
+            <div class="col-lg-8">
+
+
+                <!-- ==============================
+                     CAFÉS
+                =============================== -->
+                <section class="mb-5">
+
+                    <h2 class="categoria mb-4">
+                        ☕ Cafés
+                    </h2>
+
+                    <div class="row g-4">
+
+
+                        <!-- Café Expresso -->
+                        <div class="col-md-6">
+
+                            <div class="card produto">
+
+                                <img th:src="@{/img/café.png}" alt="Café expresso">
+
+                                <div class="card-body">
+
+                                    <h5>
+                                        Café Expresso
+                                    </h5>
+
+                                    <p>
+                                        Café expresso tradicional, intenso e aromático.
+                                    </p>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+
+                                        <span class="preco">
+                                            R$ 6,00
+                                        </span>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-cafe"
+                                            onclick="adicionar('Café Expresso', 6.00)">
+
+                                            Adicionar
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Cappuccino -->
+                        <div class="col-md-6">
+
+                            <div class="card produto">
+
+                                <img th:src="@{/img/capucino.png}" alt="Cappuccino">
+
+                                <div class="card-body">
+
+                                    <h5>
+                                        Cappuccino Cremoso
+                                    </h5>
+
+                                    <p>
+                                        Café cremoso com leite vaporizado e espuma.
+                                    </p>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+
+                                        <span class="preco">
+                                            R$ 9,00
+                                        </span>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-cafe"
+                                            onclick="adicionar('Cappuccino Cremoso', 9.00)">
+
+                                            Adicionar
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Café Gelado -->
+                        <div class="col-md-6">
+
+                            <div class="card produto">
+
+                                <img th:src="@{/img/gelado.png}" alt="Café gelado">
+
+                                <div class="card-body">
+
+                                    <h5>
+                                        Café Gelado Cremoso
+                                    </h5>
+
+                                    <p>
+                                        Café gelado refrescante e levemente adocicado.
+                                    </p>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+
+                                        <span class="preco">
+                                            R$ 11,00
+                                        </span>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-cafe"
+                                            onclick="adicionar('Café Gelado Cremoso', 11.00)">
+
+                                            Adicionar
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==============================
+                     DOCES
+                =============================== -->
+                <section class="mb-5">
+
+                    <h2 class="categoria mb-4">
+                        🍰 Doces
+                    </h2>
+
+                    <div class="row g-4">
+
+
+                        <!-- Bolo -->
+                        <div class="col-md-6">
+
+                            <div class="card produto">
+
+                                <img th:src="@{/img/bolo.png}" alt="Bolo de chocolate">
+
+
+                                <div class="card-body">
+
+                                    <h5>
+                                        Bolo de Chocolate
+                                    </h5>
+
+                                    <p>
+                                        Bolo de chocolate com textura macia.
+                                    </p>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+
+                                        <span class="preco">
+                                            R$ 9,00
+                                        </span>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-cafe"
+                                            onclick="adicionar('Bolo de Chocolate', 9.00)">
+
+                                            Adicionar
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Brownie -->
+                        <div class="col-md-6">
+
+                            <div class="card produto">
+
+                                <img th:src="@{/img/brownie.png}" alt="Brownie">
+
+                                <div class="card-body">
+
+                                    <h5>
+                                        Brownie de Chocolate
+                                    </h5>
+
+                                    <p>
+                                        Brownie macio e intenso de chocolate.
+                                    </p>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+
+                                        <span class="preco">
+                                            R$ 10,00
+                                        </span>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-cafe"
+                                            onclick="adicionar('Brownie de Chocolate', 10.00)">
+
+                                            Adicionar
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Cheesecake -->
+                        <div class="col-md-6">
+
+                            <div class="card produto">
+
+
+                                <img th:src="@{/img/cheescake.png}" alt="Cheesecake">
+
+                                <div class="card-body">
+
+                                    <h5>
+                                        Cheesecake
+                                    </h5>
+
+                                    <p>
+                                        Cheesecake cremoso com cobertura de frutas.
+                                    </p>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+
+                                        <span class="preco">
+                                            R$ 15,00
+                                        </span>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-cafe"
+                                            onclick="adicionar('Cheesecake', 15.00)">
+
+                                            Adicionar
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==============================
+                     SALGADOS
+                =============================== -->
+                <section class="mb-5">
+
+                    <h2 class="categoria mb-4">
+                        🥐 Salgados
+                    </h2>
+
+                    <div class="row g-4">
+
+
+                        <!-- Croissant -->
+                        <div class="col-md-6">
+
+                            <div class="card produto">
+
+                                <img th:src="@{/img/croissant.png}" alt="Croissant">
+
+                                <div class="card-body">
+
+                                    <h5>
+                                        Croissant
+                                    </h5>
+
+                                    <p>
+                                        Croissant crocante por fora e macio por dentro.
+                                    </p>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+
+                                        <span class="preco">
+                                            R$ 8,50
+                                        </span>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-cafe"
+                                            onclick="adicionar('Croissant', 8.50)">
+
+                                            Adicionar
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Empada -->
+                        <div class="col-md-6">
+
+                            <div class="card produto">
+
+                                <img
+                                    src="../static/img/empada de framgo.png"
+                                    alt="Empada de Frango">
+
+                                <div class="card-body">
+
+                                    <h5>
+                                        Empada de Frango
+                                    </h5>
+
+                                    <p>
+                                        Empada de frango quentinha, saborosa e cremosa.
+                                    </p>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+
+                                        <span class="preco">
+                                            R$ 9,00
+                                        </span>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-cafe"
+                                            onclick="adicionar('Empada de Frango', 9.00)">
+
+                                            Adicionar
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Misto -->
+                        <div class="col-md-6">
+
+                            <div class="card produto">
+
+                                <img
+                                    src="../static/img/Misto quente.png"
+                                    alt="Misto Quente">
+
+                                <div class="card-body">
+
+                                    <h5>
+                                        Misto Quente
+                                    </h5>
+
+                                    <p>
+                                        Pão de forma, presunto e queijo derretido.
+                                    </p>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+
+                                        <span class="preco">
+                                            R$ 9,00
+                                        </span>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-cafe"
+                                            onclick="adicionar('Misto Quente', 9.00)">
+
+                                            Adicionar
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==============================
+                     SAUDÁVEIS
+                =============================== -->
+                <section class="mb-5">
+
+                    <h2 class="categoria mb-4">
+                        🥗 Saudáveis
+                    </h2>
+
+                    <div class="row g-4">
+
+
+                        <!-- Salada -->
+                        <div class="col-md-6">
+
+                            <div class="card produto">
+
+                                <img
+                                    src="../static/img/salade  frruta.jpg"
+                                    alt="Salada de fruta">
+
+                                <div class="card-body">
+
+                                    <h5>
+                                        Salada de Fruta
+                                    </h5>
+
+                                    <p>
+                                        Frutas frescas e deliciosas.
+                                    </p>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+
+                                        <span class="preco">
+                                            R$ 11,50
+                                        </span>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-cafe"
+                                            onclick="adicionar('Salada de Fruta', 11.50)">
+
+                                            Adicionar
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Iogurte -->
+                        <div class="col-md-6">
+
+                            <div class="card produto">
+
+                                <img
+                                    src="../static/img/iorgute saudável.jpg"
+                                    alt="Iogurte com Granola">
+
+                                <div class="card-body">
+
+                                    <h5>
+                                        Iogurte com Granola
+                                    </h5>
+
+                                    <p>
+                                        Iogurte natural com morango e granola crocante.
+                                    </p>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+
+                                        <span class="preco">
+                                            R$ 10,00
+                                        </span>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-cafe"
+                                            onclick="adicionar('Iogurte com Granola', 10.00)">
+
+                                            Adicionar
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Açaí -->
+                        <div class="col-md-6">
+
+                            <div class="card produto">
+
+                                <img th:src="@{/img/acai.jpg}" alt="Açaí">
+
+                                <div class="card-body">
+
+                                    <h5>
+                                        Açaí
+                                    </h5>
+
+                                    <p>
+                                        Açaí cremoso servido com frutas.
+                                    </p>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+
+                                        <span class="preco">
+                                            R$ 15,00
+                                        </span>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-cafe"
+                                            onclick="adicionar('Açaí', 15.00)">
+
+                                            Adicionar
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- ==============================
+                 CARRINHO
+            =============================== -->
+            <div
+                class="col-lg-4 mt-5 mt-lg-0"
+                id="pedido">
+
+                <div class="carrinho">
+
+                    <h3 class="mb-4">
+                        🛒 Seu pedido
+                    </h3>
+
+                    <div id="listaPedido">
+
+                        <p class="text-muted text-center">
+                            Seu pedido está vazio.
+                        </p>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="d-flex justify-content-between">
+
+                        <span class="total">
+                            Total:
+                        </span>
+
+                        <span
+                            class="total"
+                            id="total">
+
+                            R$ 0,00
+
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-finalizar w-100 mt-4"
+                        onclick="abrirFinalizacao()">
+
+                        Finalizar pedido
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==============================
+         MODAL FINALIZAR PEDIDO
+    =============================== -->
+    <div
+        class="modal fade"
+        id="modalPedido"
+        tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+
+                <!-- Cabeçalho -->
+                <div class="modal-header">
+
+                    <h5 class="modal-title">
+                        Finalizar pedido
+                    </h5>
+
+                    <button
+                        type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+
+                <!-- Corpo -->
+                <div class="modal-body">
+
+
+                    <!-- FORMULÁRIO -->
+                    <div id="formularioPedido">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Nome
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nome"
+                                class="form-control"
+                                placeholder="Digite seu nome">
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Forma de pagamento
+                            </label>
+
+                            <select
+                                id="pagamento"
+                                class="form-select">
+
+                                <option value="">
+                                    Selecione
+                                </option>
+
+                                <option value="Pix">
+                                    Pix
+                                </option>
+
+                                <option value="Cartão de crédito">
+                                    Cartão de crédito
+                                </option>
+
+                                <option value="Cartão de débito">
+                                    Cartão de débito
+                                </option>
+
+                                <option value="Dinheiro">
+                                    Dinheiro
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Observações
+                            </label>
+
+                            <textarea
+                                id="observacao"
+                                class="form-control"
+                                rows="3"
+                                placeholder="Ex.: pouco açúcar, sem gelo..."></textarea>
+
+                        </div>
+
+
+                        <div class="alert alert-light border">
+
+                            <strong>
+                                Total do pedido:
+                            </strong>
+
+                            <span id="totalModal">
+                                R$ 0,00
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONFIRMAÇÃO -->
+                    <div
+                        id="confirmacao"
+                        class="text-center d-none">
+
+                        <div class="display-1">
+                            ✅
+                        </div>
+
+                        <h3 class="mt-3">
+                            Pedido realizado!
+                        </h3>
+
+                        <p>
+                            Obrigado por escolher o Café Ferreira.
+                        </p>
+
+                        <p id="numeroPedido"></p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BOTÕES -->
+                <div
+                    class="modal-footer"
+                    id="botoesModal">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                        Cancelar
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-finalizar"
+                        onclick="finalizarPedido()">
+
+                        Confirmar pedido
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         FOOTER
+    =============================== -->
+    <footer
+        id="contato"
+        class="py-4">
+
+        <div class="container text-center">
+
+            <h5>
+                ☕ Café Ferreira
+            </h5>
+
+            <p class="mb-1">
+                Seu momento especial começa com um bom café.
+            </p>
+
+            <p class="mb-1">
+                📞 (11) 93275-8484
+            </p>
+
+            <p>
+                ✉ cafeferreira@email.com
+            </p>
+
+            <hr>
+
+            <small>
+                © 2026 Café Ferreira - Todos os direitos reservados
+            </small>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- ==============================
+         JAVASCRIPT DO PEDIDO
+    =============================== -->
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript do carrinho -->
+    <script th:src="@{/js/pedido.js}"></script>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -8,14 +8,17 @@
     <title>Pedidos - Café Ferreira</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../static/img/Favicon.png">
+    <link rel="icon" type="image/png"
+          th:href="@{/img/Favicon.png}">
 
     <!-- CSS da página -->
-    <link rel="stylesheet" href="../static/css/pedido.css">
+    <link rel="stylesheet" th:href="@{/css/pedido.css}">
 </head>
+
 
 <body>
 
@@ -23,56 +26,52 @@
          NAVBAR
     =============================== -->
     <header>
-
         <nav class="navbar navbar-expand-lg sticky-top">
-
             <div class="container">
 
-                <a class="navbar-brand" href="../index.html">
+                <a class="navbar-brand" th:href="@{/}">
                     ☕ Café <span>Ferreira</span>
                 </a>
 
-                <button
-                    class="navbar-toggler bg-light"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menu">
+                <button class="navbar-toggler bg-light"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menu"
+                        aria-controls="menu"
+                        aria-expanded="false"
+                        aria-label="Abrir menu">
 
                     <span class="navbar-toggler-icon"></span>
-
                 </button>
 
                 <div class="collapse navbar-collapse" id="menu">
-
                     <ul class="navbar-nav ms-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.html">
+                            <a class="nav-link" th:href="@{/}">
                                 Início
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../templates/cardapio.html">
+                            <a class="nav-link" th:href="@{/cardapio}">
                                 Cardápio
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../templates/pedido.html">
+                            <a class="nav-link" th:href="@{/pedido}">
                                 Pedido
                             </a>
                         </li>
 
                     </ul>
-
                 </div>
 
             </div>
-
         </nav>
-
     </header>
+
 
 
     <!-- ==============================
@@ -123,9 +122,7 @@
 
                             <div class="card produto">
 
-                                <img
-                                    src="../static/img/café.png"
-                                    alt="Café expresso">
+                                <img th:src="@{/img/café.png}" alt="Café expresso">
 
                                 <div class="card-body">
 
@@ -166,9 +163,7 @@
 
                             <div class="card produto">
 
-                                <img
-                                    src="../static/img/capucino.png"
-                                    alt="Cappuccino">
+                                <img th:src="@{/img/capucino.png}" alt="Cappuccino">
 
                                 <div class="card-body">
 
@@ -209,9 +204,7 @@
 
                             <div class="card produto">
 
-                                <img
-                                    src="../static/img/gelado.png"
-                                    alt="Café gelado">
+                                <img th:src="@{/img/gelado.png}" alt="Café gelado">
 
                                 <div class="card-body">
 
@@ -268,9 +261,8 @@
 
                             <div class="card produto">
 
-                                <img
-                                    src="../static/img/bolo.png"
-                                    alt="Bolo de Chocolate">
+                                <img th:src="@{/img/bolo.png}" alt="Bolo de chocolate">
+
 
                                 <div class="card-body">
 
@@ -311,9 +303,7 @@
 
                             <div class="card produto">
 
-                                <img
-                                    src="../static/img/brownie.png"
-                                    alt="Brownie">
+                                <img th:src="@{/img/brownie.png}" alt="Brownie">
 
                                 <div class="card-body">
 
@@ -354,9 +344,8 @@
 
                             <div class="card produto">
 
-                                <img
-                                    src="../static/img/cheescake.png"
-                                    alt="Cheesecake">
+
+                                <img th:src="@{/img/cheescake.png}" alt="Cheesecake">
 
                                 <div class="card-body">
 
@@ -413,9 +402,7 @@
 
                             <div class="card produto">
 
-                                <img
-                                    src="../static/img/croissant.png"
-                                    alt="Croissant">
+                                <img th:src="@{/img/croissant.png}" alt="Croissant">
 
                                 <div class="card-body">
 
@@ -457,7 +444,7 @@
                             <div class="card produto">
 
                                 <img
-                                    src="../static/img/empada de framgo.png"
+                                    th:src="@{/img/empada de framgo.png}"
                                     alt="Empada de Frango">
 
                                 <div class="card-body">
@@ -500,7 +487,7 @@
                             <div class="card produto">
 
                                 <img
-                                    src="../static/img/Misto quente.png"
+                                    th:src="@{/img/Misto quente.png}"
                                     alt="Misto Quente">
 
                                 <div class="card-body">
@@ -559,7 +546,7 @@
                             <div class="card produto">
 
                                 <img
-                                    src="../static/img/salade  frruta.jpg"
+                                    th:src="@{/img/salade  frruta.jpg}"
                                     alt="Salada de fruta">
 
                                 <div class="card-body">
@@ -602,7 +589,7 @@
                             <div class="card produto">
 
                                 <img
-                                    src="../static/img/iorgute saudável.jpg"
+                                    th:src="@{/img/iorgute saudável.jpg}"
                                     alt="Iogurte com Granola">
 
                                 <div class="card-body">
@@ -644,9 +631,7 @@
 
                             <div class="card produto">
 
-                                <img
-                                    src="../static/img/acai.jpg"
-                                    alt="Açaí">
+                                <img th:src="@{/img/acai.jpg}" alt="Açaí">
 
                                 <div class="card-body">
 
@@ -961,680 +946,11 @@
     <!-- ==============================
          JAVASCRIPT DO PEDIDO
     =============================== -->
-    <script>
-
-        // ==========================================
-        // CARREGAR CARRINHO
-        // ==========================================
-
-        let pedido =
-            JSON.parse(
-                localStorage.getItem("carrinhoCafe")
-            ) || [];
-
-
-        // ==========================================
-        // SALVAR CARRINHO
-        // ==========================================
-
-        function salvarCarrinho() {
-
-            localStorage.setItem(
-                "carrinhoCafe",
-                JSON.stringify(pedido)
-            );
-
-            atualizarPedido();
-
-        }
-
-
-        // ==========================================
-        // ADICIONAR PRODUTO
-        // ==========================================
-
-        function adicionar(nome, preco) {
-
-            const itemExistente =
-                pedido.find(
-                    item => item.nome === nome
-                );
-
-
-            if (itemExistente) {
-
-                itemExistente.quantidade++;
-
-            } else {
-
-                pedido.push({
-
-                    nome: nome,
-
-                    preco: preco,
-
-                    quantidade: 1
-
-                });
-
-            }
-
-
-            salvarCarrinho();
-
-        }
-
-
-        // ==========================================
-        // AUMENTAR
-        // ==========================================
-
-        function aumentar(index) {
-
-            if (!pedido[index]) return;
-
-            pedido[index].quantidade++;
-
-            salvarCarrinho();
-
-        }
-
-
-        // ==========================================
-        // DIMINUIR
-        // ==========================================
-
-        function diminuir(index) {
-
-            if (!pedido[index]) return;
-
-
-            pedido[index].quantidade--;
-
-
-            if (pedido[index].quantidade <= 0) {
-
-                pedido.splice(index, 1);
-
-            }
-
-
-            salvarCarrinho();
-
-        }
-
-
-        // ==========================================
-        // REMOVER
-        // ==========================================
-
-        function remover(index) {
-
-            if (!pedido[index]) return;
-
-
-            pedido.splice(index, 1);
-
-
-            salvarCarrinho();
-
-        }
-
-
-        // ==========================================
-        // CALCULAR TOTAL
-        // ==========================================
-
-        function calcularTotal() {
-
-            return pedido.reduce(
-
-                (total, item) =>
-
-                    total +
-                    (item.preco * item.quantidade),
-
-                0
-
-            );
-
-        }
-
-
-        // ==========================================
-        // ATUALIZAR CARRINHO
-        // ==========================================
-
-        function atualizarPedido() {
-
-            const lista =
-                document.getElementById(
-                    "listaPedido"
-                );
-
-
-            const totalElemento =
-                document.getElementById(
-                    "total"
-                );
-
-
-            lista.innerHTML = "";
-
-
-            // Carrinho vazio
-            if (pedido.length === 0) {
-
-                lista.innerHTML = `
-                    <p class="text-muted text-center">
-                        Seu pedido está vazio.
-                    </p>
-                `;
-
-            }
-
-
-            // Carrinho com produtos
-            else {
-
-                pedido.forEach(
-                    (item, index) => {
-
-                        const subtotal =
-                            item.preco *
-                            item.quantidade;
-
-
-                        lista.innerHTML += `
-
-                            <div class="item-carrinho mb-3 p-3 border rounded">
-
-                                <div class="d-flex justify-content-between align-items-center">
-
-                                    <strong>
-                                        ${item.nome}
-                                    </strong>
-
-                                    <button
-                                        type="button"
-                                        class="btn btn-sm btn-outline-danger"
-                                        onclick="remover(${index})">
-
-                                        ×
-
-                                    </button>
-
-                                </div>
-
-
-                                <div class="d-flex justify-content-between align-items-center mt-3">
-
-                                    <div class="quantidade">
-
-                                        <button
-                                            type="button"
-                                            class="btn btn-outline-secondary btn-sm"
-                                            onclick="diminuir(${index})">
-
-                                            −
-
-                                        </button>
-
-
-                                        <span class="mx-2">
-
-                                            ${item.quantidade}
-
-                                        </span>
-
-
-                                        <button
-                                            type="button"
-                                            class="btn btn-outline-secondary btn-sm"
-                                            onclick="aumentar(${index})">
-
-                                            +
-
-                                        </button>
-
-                                    </div>
-
-
-                                    <strong>
-
-                                        R$
-                                        ${subtotal
-                                            .toFixed(2)
-                                            .replace(".", ",")}
-
-                                    </strong>
-
-                                </div>
-
-                            </div>
-
-                        `;
-
-                    }
-                );
-
-            }
-
-
-            // Atualizar total
-
-            const total =
-                calcularTotal();
-
-
-            totalElemento.innerText =
-                "R$ " +
-                total
-                    .toFixed(2)
-                    .replace(".", ",");
-
-        }
-
-
-        // ==========================================
-        // ABRIR FINALIZAÇÃO
-        // ==========================================
-
-        function abrirFinalizacao() {
-
-            if (pedido.length === 0) {
-
-                alert(
-                    "Adicione pelo menos um produto ao pedido."
-                );
-
-                return;
-
-            }
-
-
-            const total =
-                calcularTotal();
-
-
-            document
-                .getElementById("totalModal")
-                .innerText =
-                "R$ " +
-                total
-                    .toFixed(2)
-                    .replace(".", ",");
-
-
-            const modal =
-                new bootstrap.Modal(
-                    document.getElementById(
-                        "modalPedido"
-                    )
-                );
-
-
-            modal.show();
-
-        }
-
-
-        // ==========================================
-        // GERAR NÚMERO DO PEDIDO
-        // ==========================================
-
-        function gerarNumeroPedido() {
-
-            let numero =
-                parseInt(
-                    localStorage.getItem(
-                        "ultimoNumeroPedido"
-                    )
-                ) || 0;
-
-
-            numero++;
-
-
-            localStorage.setItem(
-                "ultimoNumeroPedido",
-                numero
-            );
-
-
-            return String(numero)
-                .padStart(3, "0");
-
-        }
-
-
-        // ==========================================
-        // FINALIZAR PEDIDO
-        // ==========================================
-
-        function finalizarPedido() {
-
-            if (pedido.length === 0) {
-
-                alert(
-                    "Adicione pelo menos um produto ao pedido."
-                );
-
-                return;
-
-            }
-
-
-            const nome =
-                document
-                    .getElementById("nome")
-                    .value
-                    .trim();
-
-
-            const pagamento =
-                document
-                    .getElementById("pagamento")
-                    .value;
-
-
-            const observacao =
-                document
-                    .getElementById("observacao")
-                    .value
-                    .trim();
-
-
-            // Validar nome
-
-            if (nome === "") {
-
-                alert(
-                    "Digite seu nome."
-                );
-
-                return;
-
-            }
-
-
-            // Validar pagamento
-
-            if (pagamento === "") {
-
-                alert(
-                    "Selecione uma forma de pagamento."
-                );
-
-                return;
-
-            }
-
-
-            // Número do pedido
-
-            const numero =
-                gerarNumeroPedido();
-
-
-            // Data e hora
-
-            const agora =
-                new Date();
-
-
-            const horario =
-                agora.toLocaleTimeString(
-                    "pt-BR",
-                    {
-                        hour: "2-digit",
-                        minute: "2-digit"
-                    }
-                );
-
-
-            const data =
-                agora.toLocaleDateString(
-                    "pt-BR"
-                );
-
-
-            // ==========================================
-            // CRIAR PEDIDO
-            // ==========================================
-
-            const novoPedido = {
-
-                id: Date.now(),
-
-                numero: numero,
-
-                cliente: nome,
-
-                tipo:
-                    "Atendimento no balcão",
-
-                data: data,
-
-                horario: horario,
-
-                status:
-                    "atendimento",
-
-                pagamento:
-                    pagamento,
-
-                observacao:
-                    observacao,
-
-                produtos:
-                    pedido.map(
-                        item => ({
-
-                            nome:
-                                item.nome,
-
-                            preco:
-                                item.preco,
-
-                            quantidade:
-                                item.quantidade,
-
-                            subtotal:
-                                item.preco *
-                                item.quantidade
-
-                        })
-                    ),
-
-                total:
-                    calcularTotal()
-
-            };
-
-
-            // ==========================================
-            // PEGAR PEDIDOS EXISTENTES
-            // ==========================================
-
-            let pedidosSalvos =
-                JSON.parse(
-                    localStorage.getItem(
-                        "pedidosCafeFerreira"
-                    )
-                ) || [];
-
-
-            // Adicionar novo pedido
-
-            pedidosSalvos.push(
-                novoPedido
-            );
-
-
-            // Salvar pedidos
-
-            localStorage.setItem(
-                "pedidosCafeFerreira",
-                JSON.stringify(
-                    pedidosSalvos
-                )
-            );
-
-
-            // ==========================================
-            // MOSTRAR CONFIRMAÇÃO
-            // ==========================================
-
-            document
-                .getElementById(
-                    "formularioPedido"
-                )
-                .classList.add("d-none");
-
-
-            document
-                .getElementById(
-                    "confirmacao"
-                )
-                .classList.remove("d-none");
-
-
-            document
-                .getElementById(
-                    "numeroPedido"
-                )
-                .innerHTML = `
-
-                    Pedido nº
-                    <strong>#${numero}</strong>
-
-                    <br>
-
-                    <small>
-                        Seu pedido foi enviado para a cafeteria.
-                    </small>
-
-                `;
-
-
-            // ==========================================
-            // ALTERAR BOTÃO DO MODAL
-            // ==========================================
-
-            document
-                .getElementById(
-                    "botoesModal"
-                )
-                .innerHTML = `
-
-                    <button
-                        type="button"
-                        class="btn btn-cafe"
-                        data-bs-dismiss="modal"
-                        onclick="limparPedido()">
-
-                        Fechar
-
-                    </button>
-
-                `;
-
-        }
-
-
-        // ==========================================
-        // LIMPAR PEDIDO
-        // ==========================================
-
-        function limparPedido() {
-
-            pedido = [];
-
-
-            localStorage.removeItem(
-                "carrinhoCafe"
-            );
-
-
-            atualizarPedido();
-
-
-            // Limpar formulário
-
-            document
-                .getElementById("nome")
-                .value = "";
-
-
-            document
-                .getElementById("pagamento")
-                .value = "";
-
-
-            document
-                .getElementById("observacao")
-                .value = "";
-
-
-            // Mostrar formulário novamente
-
-            document
-                .getElementById(
-                    "formularioPedido"
-                )
-                .classList.remove("d-none");
-
-
-            // Esconder confirmação
-
-            document
-                .getElementById(
-                    "confirmacao"
-                )
-                .classList.add("d-none");
-
-
-            // Restaurar botões
-
-            document
-                .getElementById(
-                    "botoesModal"
-                )
-                .innerHTML = `
-
-                    <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal">
-
-                        Cancelar
-
-                    </button>
-
-
-                    <button
-                        type="button"
-                        class="btn btn-finalizar"
-                        onclick="finalizarPedido()">
-
-                        Confirmar pedido
-
-                    </button>
-
-                `;
-
-        }
-
-
-        // ==========================================
-        // INICIAR PÁGINA
-        // ==========================================
-
-        atualizarPedido();
-
-    </script>
+    <!-- Bootstrap JavaScript -->
+    
+
+    <!-- JavaScript do carrinho -->
+    <script th:src="@{/js/pedido.js}"></script>
 
 </body>
-
 </html>
