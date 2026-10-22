@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Painel do Cliente - Café Ferreira</title>
+
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        :root {
+            --marrom-escuro: #3e2723;
+            --marrom: #6f4e37;
+            --caramelo: #c18b5a;
+            --creme: #fce2b4;
+            --fundo: #fffaf2;
+            --branco: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--fundo);
+            color: var(--marrom-escuro);
+            font-family: Arial, sans-serif;
+        }
+
+        /* Cabeçalho */
+        .navbar {
+            background-color: var(--marrom-escuro);
+            padding: 14px 0;
+        }
+
+        .navbar-brand {
+            color: var(--creme);
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .navbar-brand:hover {
+            color: var(--branco);
+        }
+
+        .navbar .nav-link {
+            color: var(--branco);
+            margin-left: 8px;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: var(--creme);
+        }
+
+        .btn-sair {
+            border: 1px solid var(--creme);
+            color: var(--creme);
+            border-radius: 8px;
+        }
+
+        .btn-sair:hover {
+            background-color: var(--creme);
+            color: var(--marrom-escuro);
+        }
+
+        /* Boas-vindas */
+        .boas-vindas {
+            background: linear-gradient(135deg, #6f4e37, #3e2723);
+            color: var(--branco);
+            padding: 55px 0;
+        }
+
+        .boas-vindas h1 {
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+            font-weight: bold;
+        }
+
+        .boas-vindas p {
+            color: #fcebd5;
+            font-size: 1.05rem;
+        }
+
+        .icone-cafe {
+            font-size: 5rem;
+            color: var(--creme);
+        }
+
+        .btn-cardapio {
+            background-color: var(--creme);
+            color: var(--marrom-escuro);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 22px;
+            font-weight: bold;
+        }
+
+        .btn-cardapio:hover {
+            background-color: var(--branco);
+            color: var(--marrom-escuro);
+        }
+
+        /* Conteúdo */
+        .secao-titulo {
+            font-weight: bold;
+            color: var(--marrom-escuro);
+        }
+
+        .atalho-card {
+            height: 100%;
+            padding: 26px;
+            border: 1px solid #eadbc8;
+            border-radius: 14px;
+            background-color: var(--branco);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .atalho-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(62, 39, 35, 0.10);
+        }
+
+        .atalho-icone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 58px;
+            height: 58px;
+            border-radius: 12px;
+            background-color: var(--creme);
+            color: var(--marrom);
+            font-size: 1.7rem;
+            margin-bottom: 18px;
+        }
+
+        .atalho-card h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .atalho-card p {
+            color: #6c625b;
+            min-height: 48px;
+        }
+
+        .link-atalho {
+            color: var(--marrom);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .link-atalho:hover {
+            color: var(--caramelo);
+        }
+
+        /* Informações */
+        .informacao {
+            background-color: #f7ead8;
+            border-radius: 14px;
+            padding: 25px;
+        }
+
+        .informacao i {
+            color: var(--marrom);
+            font-size: 1.5rem;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--marrom-escuro);
+            color: var(--creme);
+            padding: 25px 0;
+            margin-top: 55px;
+        }
+
+        footer a {
+            color: var(--creme);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--branco);
+        }
+
+        @media (max-width: 767px) {
+            .boas-vindas {
+                padding: 38px 0;
+                text-align: center;
+            }
+
+            .icone-cafe {
+                font-size: 3.5rem;
+                margin-top: 20px;
+            }
+
+            .atalho-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- CABEÇALHO -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+
+        <a class="navbar-brand" th:href="@{/cliente/inicio}">
+            <i class="bi bi-cup-hot-fill"></i>
+            Café Ferreira
+        </a>
+
+        <button class="navbar-toggler bg-light"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuCliente"
+                aria-controls="menuCliente"
+                aria-expanded="false"
+                aria-label="Abrir menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuCliente">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       th:href="@{/cliente/inicio}">
+                        Início
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       th:href="@{/cardapio}">
+                        Cardápio
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       th:href="@{/cliente/pedidos}">
+                        Meus pedidos
+                    </a>
+                </li>
+
+                <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                    <form th:action="@{/logout}" method="post">
+
+                        <input type="hidden"
+                               th:name="${_csrf.parameterName}"
+                               th:value="${_csrf.token}">
+
+                        <button type="submit" class="btn btn-sair">
+                            <i class="bi bi-box-arrow-right"></i>
+                            Sair
+                        </button>
+                    </form>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- BOAS-VINDAS -->
+<section class="boas-vindas">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-md-8">
+
+                <p class="mb-2">
+                    <i class="bi bi-sun"></i>
+                    Seja bem-vindo(a) ao Café Ferreira!
+                </p>
+
+                <h1>
+                    Olá,
+                    <span th:text="${nomeCliente != null
+                        ? nomeCliente : 'cliente'}">Cliente</span>!
+                </h1>
+
+                <p class="mt-3">
+                    Que bom ter você por aqui.
+                    Explore nosso cardápio e aproveite seus cafés,
+                    doces e salgados favoritos.
+                </p>
+
+                <a th:href="@{/cardapio}"
+                   class="btn btn-cardapio mt-2">
+                    <i class="bi bi-cup-hot"></i>
+                    Ver cardápio
+                </a>
+
+            </div>
+
+            <div class="col-md-4 text-center">
+                <i class="bi bi-cup-hot-fill icone-cafe"></i>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ATALHOS -->
+<main class="container py-5">
+
+    <section class="mb-5">
+
+        <div class="mb-4">
+            <h2 class="secao-titulo">O que deseja fazer?</h2>
+            <p class="text-muted">
+                Acesse rapidamente as opções da sua conta.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Cardápio -->
+            <div class="col-md-6 col-lg-3">
+                <article class="atalho-card">
+
+                    <div class="atalho-icone">
+                        <i class="bi bi-journal-richtext"></i>
+                    </div>
+
+                    <h3>Nosso cardápio</h3>
+
+                    <p>
+                        Conheça nossos cafés, doces e salgados
+                        e escolha seus favoritos.
+                    </p>
+
+                    <a th:href="@{/cardapio}" class="link-atalho">
+                        Explorar cardápio
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </article>
+            </div>
+
+            <!-- Pedidos -->
+            <div class="col-md-6 col-lg-3">
+                <article class="atalho-card">
+
+                    <div class="atalho-icone">
+                        <i class="bi bi-receipt"></i>
+                    </div>
+
+                    <h3>Meus pedidos</h3>
+
+                    <p>
+                        Consulte seus pedidos e acompanhe
+                        o andamento das suas compras.
+                    </p>
+
+                    <a th:href="@{/cliente/pedidos}" class="link-atalho">
+                        Consultar pedidos
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </article>
+            </div>
+
+            <!-- Conta -->
+            <div class="col-md-6 col-lg-3">
+                <article class="atalho-card">
+
+                    <div class="atalho-icone">
+                        <i class="bi bi-person-circle"></i>
+                    </div>
+
+                    <h3>Minha conta</h3>
+
+                    <p>
+                        Confira seus dados pessoais e
+                        as informações do seu cadastro.
+                    </p>
+
+                    <a th:href="@{/cliente/minha-conta}"
+                       class="link-atalho">
+                        Ver minha conta
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </article>
+            </div>
+
+            <!-- Endereço -->
+            <div class="col-md-6 col-lg-3">
+                <article class="atalho-card">
+
+                    <div class="atalho-icone">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+
+                    <h3>Meu endereço</h3>
+
+                    <p>
+                        Consulte o endereço cadastrado para
+                        facilitar seus pedidos.
+                    </p>
+
+                    <a th:href="@{/cliente/endereco}"
+                       class="link-atalho">
+                        Ver endereço
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </article>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MENSAGEM INFORMATIVA -->
+    <section class="informacao">
+        <div class="row align-items-center g-3">
+
+            <div class="col-auto">
+                <i class="bi bi-heart-fill"></i>
+            </div>
+
+            <div class="col">
+                <h2 class="h5 fw-bold mb-1">
+                    Um café preparado para você!
+                </h2>
+
+                <p class="mb-0">
+                    No Café Ferreira, cada pausa merece um sabor especial.
+                    Estamos felizes em fazer parte do seu dia.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- RODAPÉ -->
+<footer>
+    <div class="container">
+
+        <div class="row align-items-center g-3">
+
+            <div class="col-md-6 text-center text-md-start">
+                <strong>
+                    <i class="bi bi-cup-hot-fill"></i>
+                    Café Ferreira
+                </strong>
+
+                <p class="small mb-0 mt-1">
+                    Seu momento especial começa aqui.
+                </p>
+            </div>
+
+            <div class="col-md-6 text-center text-md-end">
+                <p class="small mb-0">
+                    &copy; 2026 Café Ferreira.
+                    Todos os direitos reservados.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</footer>
+
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>
