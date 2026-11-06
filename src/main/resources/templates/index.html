@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 
@@ -5,16 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Café Ferreira</title>
+    <title>Início - Café Ferreira</title>
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
           rel="stylesheet">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" th:href="@{/img/Favicon.png}">
-
-    <!-- CSS do projeto -->
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 
@@ -23,7 +20,6 @@
 <!-- HEADER -->
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-
         <div class="container">
 
             <a class="navbar-brand" th:href="@{/}">
@@ -61,6 +57,19 @@
                         </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/login}">
+                            Entrar
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-cafe"
+                           th:href="@{/criar-conta}">
+                            Criar conta
+                        </a>
+                    </li>
+
                 </ul>
 
             </div>
@@ -73,13 +82,13 @@
 
     <!-- HERO -->
     <section id="home" class="hero">
-
         <div class="container">
+
             <div class="hero-content">
 
-                    <span class="badge text-bg-warning mb-3">
-                        Sabor artesanal todos os dias
-                    </span>
+                <span class="badge text-bg-warning mb-3">
+                    Sabor artesanal todos os dias
+                </span>
 
                 <h1>
                     Seu momento especial só começa com um bom café.
@@ -103,7 +112,6 @@
     <section class="container py-5">
 
         <div class="text-center mb-4">
-
             <h2 class="section-title">
                 Experiências Café Ferreira
             </h2>
@@ -111,14 +119,12 @@
             <p class="section-subtitle">
                 Aromas, sabores e momentos feitos para você.
             </p>
-
         </div>
 
         <div id="carouselCafe"
              class="carousel slide carousel-fade"
              data-bs-ride="carousel">
 
-            <!-- INDICADORES -->
             <div class="carousel-indicators">
 
                 <button type="button"
@@ -143,7 +149,6 @@
 
             </div>
 
-            <!-- SLIDES -->
             <div class="carousel-inner">
 
                 <div class="carousel-item active">
@@ -154,7 +159,6 @@
 
                     <div class="carousel-caption">
                         <h5>Café fresco e aromático</h5>
-
                         <p>
                             Grãos selecionados para uma experiência especial.
                         </p>
@@ -170,7 +174,6 @@
 
                     <div class="carousel-caption">
                         <h5>Perfeito para qualquer momento</h5>
-
                         <p>
                             Escolha seu café e aproveite com nossos acompanhamentos.
                         </p>
@@ -186,7 +189,6 @@
 
                     <div class="carousel-caption">
                         <h5>Combinações irresistíveis</h5>
-
                         <p>
                             Comece bem o dia com o sabor do Café Ferreira.
                         </p>
@@ -196,25 +198,21 @@
 
             </div>
 
-            <!-- BOTÃO ANTERIOR -->
             <button class="carousel-control-prev"
                     type="button"
                     data-bs-target="#carouselCafe"
                     data-bs-slide="prev">
 
                 <span class="carousel-control-prev-icon"></span>
-
                 <span class="visually-hidden">Anterior</span>
             </button>
 
-            <!-- BOTÃO PRÓXIMO -->
             <button class="carousel-control-next"
                     type="button"
                     data-bs-target="#carouselCafe"
                     data-bs-slide="next">
 
                 <span class="carousel-control-next-icon"></span>
-
                 <span class="visually-hidden">Próximo</span>
             </button>
 
@@ -225,18 +223,15 @@
     <section id="produtos" class="container py-5">
 
         <div class="text-center mb-5">
-
             <h2 class="section-title">Nossos produtos</h2>
 
             <p class="section-subtitle">
                 Escolha seu favorito e aproveite cada gole.
             </p>
-
         </div>
 
         <div class="row g-4 justify-content-center">
 
-            <!-- PRODUTO 1 -->
             <div class="col-md-6 col-lg-3 d-flex justify-content-center">
 
                 <div class="card product-card">
@@ -264,7 +259,6 @@
                 </div>
             </div>
 
-            <!-- PRODUTO 2 -->
             <div class="col-md-6 col-lg-3 d-flex justify-content-center">
 
                 <div class="card product-card">
@@ -366,7 +360,6 @@
     </div>
 </footer>
 
-<!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
