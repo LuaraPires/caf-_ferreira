@@ -1,3 +1,4 @@
+
 package senai499.com.br.cafeferreira.repository;
 
 import senai499.com.br.cafeferreira.model.Cliente;
@@ -17,7 +18,7 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     // Verifica se já existe um cliente com esse e-mail
     boolean existsByEmail(String email);
 
-    // Lista os clientes ativos
+    // Lista todos os clientes ativos
     List<Cliente> findByAtivoTrue();
 
     // Busca clientes pelo nome
@@ -25,4 +26,5 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
     // Busca clientes ativos pelo nome
     List<Cliente> findByNomeContainingIgnoreCaseAndAtivoTrue(String nome);
+
 }
