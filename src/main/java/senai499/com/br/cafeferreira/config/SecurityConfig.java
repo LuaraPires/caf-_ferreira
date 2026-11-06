@@ -3,7 +3,6 @@ package senai499.com.br.cafeferreira.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -12,11 +11,13 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 
+    // Criptografia das senhas
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+    // Configuração de acesso ao sistema
     @Bean
     public SecurityFilterChain securityFilterChain(
             HttpSecurity http) throws Exception {
@@ -24,8 +25,9 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(auth -> auth
 
-                        // Páginas e arquivos públicos
+                        // Páginas públicas
                         .requestMatchers(
+                                "/",
                                 "/login",
                                 "/criar-conta",
                                 "/css/**",
@@ -35,41 +37,41 @@ public class SecurityConfig {
                                 "/favicon.ico"
                         ).permitAll()
 
-                        // Acesso do administrador
+                        // Área administrativa
                         .requestMatchers("/admin/**")
                         .hasRole("ADMIN")
 
-                        // Acesso do funcionário
+                        // Área dos funcionários
                         .requestMatchers("/funcionario/**")
                         .hasAnyRole("FUNCIONARIO", "ADMIN")
 
-                        // Acesso do cliente
-                        .requestMatchers(
-                                "/pedidos/finalizar",
-                                "/pedidos/finalizar/**",
-                                "/cliente/**"
-                        ).hasRole("CLIENTE")
+                        // Área dos clientes
+                        .requestMatchers("/cliente/**")
+                        .hasRole("CLIENTE")
 
-                        // Demais rotas
-                        .anyRequest().permitAll()
+                        .requestMatchers(
+                                "/pedido",
+                                "/cardapio",
+                                "/pedidos/finalizar",
+                                "/pedidos/finalizar/**"
+                        ).permitAll()
+
+                        // Demais páginas exigem autenticação
+                        .anyRequest().authenticated()
                 )
 
+                // Configuração do login
                 .formLogin(form -> form
                         .loginPage("/login")
-                        .loginProcessingUrl("/login")
-                        .usernameParameter("email")
-                        .passwordParameter("senha")
-
-                        // Página aberta depois do login
-                        .defaultSuccessUrl("/cliente/inicio", true)
-
-                        .failureUrl("/login?erro")
+                        .defaultSuccessUrl("/login/sucesso", true)
+                        .failureUrl("/login?erro=true")
                         .permitAll()
                 )
 
+                // Configuração do logout
                 .logout(logout -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessUrl("/login?logout")
+                        .logoutSuccessUrl("/login?logout=true")
                         .invalidateHttpSession(true)
                         .deleteCookies("JSESSIONID")
                         .permitAll()

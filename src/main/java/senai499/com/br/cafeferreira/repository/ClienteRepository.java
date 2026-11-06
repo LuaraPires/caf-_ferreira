@@ -1,17 +1,14 @@
-
 package senai499.com.br.cafeferreira.repository;
 
 import senai499.com.br.cafeferreira.model.Cliente;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
 import java.util.Optional;
+import java.util.List;
 
 @Repository
-public interface ClienteRepository
-        extends JpaRepository<Cliente, Long> {
+public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
     Optional<Cliente> findByEmail(String email);
 
@@ -21,6 +18,5 @@ public interface ClienteRepository
 
     List<Cliente> findByNomeContainingIgnoreCase(String nome);
 
-    List<Cliente> findByNomeContainingIgnoreCaseAndAtivoTrue(
-            String nome);
+    List<Cliente> findByNomeContainingIgnoreCaseAndAtivoTrue(String nome);
 }
